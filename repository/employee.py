@@ -4,10 +4,16 @@ from models import Employee
 from fastapi import HTTPException, status
 
 
-def create(name):
+def create(name, surname, email, joining_date, retirement_date, company_id, department_id):
     session = Session(engine)
     x = Employee(
-        name=name
+        name=name,
+        surname=surname,
+        email=email,
+        joining_date=joining_date,
+        retirement_date=retirement_date,
+        company_id=company_id,
+        department_id=department_id,
     )
     session.add(x)
     session.commit()
